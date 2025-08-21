@@ -252,7 +252,7 @@ onMounted(()=>{
     },
     {
       id: 'pg',
-      label: 'Postgres',
+      label: 'PostgreSQL',
       ext:"sql"
     },
     {
@@ -274,10 +274,25 @@ onMounted(()=>{
       ext:'json'
     },
     {
-      id: 'pg',
-      label: 'Postgres',
+      id: 'dbml',
+      label: 'DBML',
+      ext: 'txt'
+    },
+    {
+      id: 'postgres',
+      label: 'PostgreSQL',
       ext:'sql'
     },
+    {
+      id: 'mysql',
+      label: 'MySQL',
+      ext: 'sql'
+    },
+    {
+      id: 'mssql',
+      label: 'MSSQL',
+      ext: 'sql'
+    }
   ])
 
   const dark = computed({

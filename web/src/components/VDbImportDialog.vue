@@ -117,9 +117,9 @@
                     })
                 } else {
                     if (option == 'R') {
-                        if (props.id == 'pg') {
+                        if (props.id != 'json') {
                             try {
-                                const dbmlData = importer.import(value.data, 'postgres');
+                                const dbmlData = importer.import(value.data, props.id);
                                 filesfs.getItem(newFileName.value).then((error, val)=>{
                                 if (error == null) {
                                     val.source.text = dbmlData
@@ -181,10 +181,10 @@
                             newname = newname+"_copy"+copyIndex;
                             copyIndex++;
                         }
-                        if (props.id == 'pg') {
+                        if (props.id != 'json') {
                             try {
                                 const editor = useEditorStore();
-                                const dbmlData = importer.import(value.data, 'postgres');
+                                const dbmlData = importer.import(value.data, props.id);
                                 fstore.newImportFile(newname)
                                 editor.updateSourceText(dbmlData)
                                 $q.notify({
@@ -233,10 +233,10 @@
                         
                     }
                     if (option == 'S'){
-                        if (props.id == 'pg') {
+                        if (props.id != 'json') {
                             try {
                                 const editor = useEditorStore();
-                                const dbmlData = importer.import(value.data, 'postgres');
+                                const dbmlData = importer.import(value.data, props.id);
                                 fstore.newImportFile(newFileName.value)
                                 editor.updateSourceText(dbmlData)
                             } catch (error) {
